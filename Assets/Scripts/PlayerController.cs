@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
@@ -23,8 +21,8 @@ public class PlayerController : MonoBehaviour {
 //		if (verticalMov == 0)
 //			rigidBody.velocity = new Vector2 (rigidBody.velocity.x, 0);
 
-		rigidBody.velocity = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal") * speed, 0.8f),
-										 Mathf.Lerp(0, Input.GetAxis("Vertical") * speed, 0.8f) );
+		rigidBody.velocity = new Vector2(Mathf.Lerp(0, horizontalMov * speed, 0.8f),
+										 Mathf.Lerp(0, verticalMov * speed, 0.8f) );
  		
 	}
 }
