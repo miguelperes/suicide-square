@@ -3,10 +3,14 @@
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField] float speed = 10;
+	
 	private Rigidbody2D rigidBody;
+
+	PlayerShoot playerShoot;
 
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D> ();			
+		playerShoot = GetComponent<PlayerShoot>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +27,12 @@ public class PlayerController : MonoBehaviour {
 
 		rigidBody.velocity = new Vector2(Mathf.Lerp(0, horizontalMov * speed, 0.8f),
 										 Mathf.Lerp(0, verticalMov * speed, 0.8f) );
- 		
+	}
+
+	void Update() {
+		if ( Input.GetKeyDown(KeyCode.Space) ) {
+			Debug.Log("<color=blue>Fire!</color>");
+			playerShoot.fire();
+		}		
 	}
 }
