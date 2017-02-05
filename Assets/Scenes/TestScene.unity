@@ -91,23 +91,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &41787417 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1142417483378268, guid: 305e9b1109a74422cb9900a73d1e3bb0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1258755516}
---- !u!114 &41787421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 41787417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05531a0f919340cba0f9cdfaccf4261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
 --- !u!1 &879199077
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,11 +207,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4182074141898444, guid: 305e9b1109a74422cb9900a73d1e3bb0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4182074141898444, guid: 305e9b1109a74422cb9900a73d1e3bb0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4182074141898444, guid: 305e9b1109a74422cb9900a73d1e3bb0, type: 2}
       propertyPath: m_RootOrder

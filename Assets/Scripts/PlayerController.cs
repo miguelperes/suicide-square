@@ -31,8 +31,14 @@ public class PlayerController : MonoBehaviour {
 
 	void Update() {
 		if ( Input.GetKeyDown(KeyCode.Space) ) {
-			Debug.Log("<color=blue>Fire!</color>");
 			playerShoot.fire();
+			Debug.Log("Player position"+gameObject.transform.position);
 		}		
+	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(gameObject.transform.position, 0.2f);
 	}
 }
