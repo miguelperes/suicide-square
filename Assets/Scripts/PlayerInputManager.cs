@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerInputManager : MonoBehaviour {
 
+	PlayerMovement playerMovement;
 	PlayerShoot playerShoot;
 
+	float horizontalMove = 0f;
+	float verticalMove   = 0f;
+
+
 	void Start () {
-		playerShoot = GetComponent<PlayerShoot>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		
+		playerMovement = GetComponent<PlayerMovement>();
+		playerShoot = GetComponent<PlayerShoot>();		
 	}
 
-	void Update() {
+	void Update () {
 		if ( Input.GetKeyDown(KeyCode.Space) ) {
 			Quaternion currentRotation = gameObject.transform.rotation;
 			Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -27,13 +28,9 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	Quaternion rotateZBy(float angle) {
-		return Quaternion.identity;
-	}
-
-	void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(gameObject.transform.position, 0.2f);
+	void FixedUpdate() {
+			horizontalMove = Input.GetAxisRaw ("Horizontal");
+			verticalMove   = Input.GetAxisRaw ("Vertical");	
+			playerMovement.move( horizontalMove, verticalMove );		
 	}
 }

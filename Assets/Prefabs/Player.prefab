@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  timeToLive: 2
   bulletPrefab: {fileID: 1305240248686400, guid: 60dec6711143a46189e21b1840b88d25,
     type: 2}
   spawnTransform: {fileID: 4182074141898444}
