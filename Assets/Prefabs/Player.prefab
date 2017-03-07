@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004027676798984}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: BulletSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5765324120231101433, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369907597199590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.565, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4182074141898444}
@@ -80,15 +80,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142417483378268}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.7599988, y: -1.9200004, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4539838869013288}
   - {fileID: 4004027676798984}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4539838869013288
 Transform:
   m_ObjectHideFlags: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  timeToLive: 9999
+  timeToLive: 2
   spawnPosition: {fileID: 4004027676798984}
   bulletPrefab: {fileID: 1305240248686400, guid: 60dec6711143a46189e21b1840b88d25,
     type: 2}
