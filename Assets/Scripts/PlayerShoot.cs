@@ -14,26 +14,10 @@ public class PlayerShoot : MonoBehaviour {
 		}
 	}
 	
-	public void fire(Quaternion direction) {
-
-		Debug.Log("dir: " + direction);
-		Debug.Log("<i>" + spawnPosition.position + "</i>");
+	public void fire(Vector2 direction) {
+		var bulletInstance = (GameObject) Instantiate( bulletPrefab, spawnPosition.position, spawnPosition.rotation );
+		bulletInstance.GetComponent<Rigidbody2D>().AddForce(direction * speed, ForceMode2D.Impulse);
 		
-		/* Instantiation */
-		// var bulletInstance = (GameObject) Instantiate( bulletPrefab, spawnPosition.position, direction );
-		var bulletInstance = (GameObject) Instantiate( bulletPrefab, spawnPosition.position, Quaternion.Euler(0f,0f,90f) );
-
-		// Debug.Log("<i>" + bulletInstance.transform.position + "</i>");
-
-		/*Projectile Speed*/
-		// bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
-		// bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, speed), ForceMode2D.Impulse);
-
 		Destroy(bulletInstance, timeToLive);
-	}
-
-	void Update()
-	{
-		// Debug.Log("<b>" + spawnPosition.position + "</b>");
 	}
 }

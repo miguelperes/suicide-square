@@ -16,15 +16,19 @@ public class PlayerInputManager : MonoBehaviour {
 
 	void Update () {
 		if ( Input.GetKeyDown(KeyCode.Space) ) {
-			//TODO
-			Quaternion playerFront = gameObject.transform.rotation;
-			playerShoot.fire(playerFront);
+			
 		} 
 		else if( Input.GetKeyDown(KeyCode.RightArrow) ) {
-			//TODO
-			Quaternion currentRotation = gameObject.transform.rotation;
-			Quaternion rotation = Quaternion.Euler(0f, 0f, gameObject.transform.rotation.z + -90f);
-			playerShoot.fire(rotation);
+			playerShoot.fire(new Vector2(1f, 0f));
+		}
+		else if( Input.GetKeyDown(KeyCode.LeftArrow) ) {
+			playerShoot.fire(new Vector2(-1f, 0f));
+		}
+		else if( Input.GetKeyDown(KeyCode.UpArrow) ) {
+			playerShoot.fire(new Vector2(0f, 1f));
+		}
+		else if( Input.GetKeyDown(KeyCode.DownArrow) ) {
+			playerShoot.fire(new Vector2(0f, -1f));
 		}
 	}
 
