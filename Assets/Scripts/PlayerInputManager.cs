@@ -4,6 +4,7 @@ public class PlayerInputManager : MonoBehaviour {
 
 	PlayerMovement playerMovement;
 	PlayerShoot playerShoot;
+	BodyShrink bodyShrink;
 
 	float horizontalMove = 0f;
 	float verticalMove   = 0f;
@@ -12,6 +13,7 @@ public class PlayerInputManager : MonoBehaviour {
 	void Start () {
 		playerMovement = GetComponent<PlayerMovement>();
 		playerShoot = GetComponent<PlayerShoot>();		
+		bodyShrink = GetComponent<BodyShrink>();
 	}
 
 	void Update () {
@@ -29,6 +31,12 @@ public class PlayerInputManager : MonoBehaviour {
 		}
 		else if( Input.GetKeyDown(KeyCode.DownArrow) ) {
 			playerShoot.fire(new Vector2(0f, -1f));
+		}
+		else if( Input.GetKeyDown(KeyCode.Comma) ) {
+			bodyShrink.shrink();
+		}
+		else if( Input.GetKeyDown(KeyCode.Period) ) {
+			bodyShrink.expand();
 		}
 	}
 
