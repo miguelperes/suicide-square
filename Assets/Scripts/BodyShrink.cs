@@ -6,6 +6,7 @@ public class BodyShrink : MonoBehaviour {
 	[SerializeField] float maxSize;
 	[SerializeField] float minSize;
 	[SerializeField] float step;
+	[SerializeField] bool enabled = true;
 
 	Vector2 currentSize;
 	Vector2 modifier;
@@ -16,19 +17,16 @@ public class BodyShrink : MonoBehaviour {
 	}
 
 	public void shrink() {
-		if(currentSize.x > minSize) {
+		if(enabled && currentSize.x > minSize) {
 			currentSize -= modifier;
 			transformObject.localScale = currentSize;
 		}
 	}
 
 	public void expand() {
-		if(currentSize.x < maxSize) {
+		if(enabled && currentSize.x < maxSize) {
 			currentSize += modifier;
 			transformObject.localScale = currentSize;
 		}
-	}
-
-	void Update(){
 	}
 }
