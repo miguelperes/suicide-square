@@ -148,7 +148,8 @@ MonoBehaviour:
   transformObject: {fileID: 4539838869013288}
   maxSize: 2
   minSize: 0.5
-  step: 0.2
+  step: 0.05
+  enabled: 1
 --- !u!114 &114786851933768720
 MonoBehaviour:
   m_ObjectHideFlags: 1
