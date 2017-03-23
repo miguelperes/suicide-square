@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class BodyShrink : MonoBehaviour {
 
@@ -6,7 +7,7 @@ public class BodyShrink : MonoBehaviour {
 	[SerializeField] float maxSize;
 	[SerializeField] float minSize;
 	[SerializeField] float step;
-	[SerializeField] bool enabled = true;
+	[SerializeField] bool enable = true;
 
 	Vector2 currentSize;
 	Vector2 modifier;
@@ -17,16 +18,18 @@ public class BodyShrink : MonoBehaviour {
 	}
 
 	public void shrink() {
-		if(enabled && currentSize.x > minSize) {
+		if(enable && currentSize.x > minSize) {
 			currentSize -= modifier;
 			transformObject.localScale = currentSize;
+			// transform.DOScale(new Vector3(5, 5, 5), 5.0f);
 		}
 	}
 
 	public void expand() {
-		if(enabled && currentSize.x < maxSize) {
+		if(enable && currentSize.x < maxSize) {
 			currentSize += modifier;
 			transformObject.localScale = currentSize;
 		}
 	}
+	
 }
